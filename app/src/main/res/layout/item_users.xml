@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/pading_min"
+    android:layout_marginEnd="@dimen/pading_min"
+    android:layout_marginTop="@dimen/pading_min">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical">
+
+        <ImageView
+            android:id="@+id/imagePhoto"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:contentDescription="@string/description_user_photo"
+            android:padding="@dimen/pading_min"
+            tools:text="1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_name"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvEmail"
+                app:layout_constraintBottom_toTopOf="@id/tvNameResponse"/>
+
+            <TextView
+                android:id="@+id/tvNameResponse"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_name"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:layout_constraintEnd_toStartOf="@id/tvEmailResponse"
+                app:layout_constraintBottom_toTopOf="@+id/tvUserName"/>
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_user_name"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNameResponse"
+                app:layout_constraintEnd_toStartOf="@id/tvPhone"
+                app:layout_constraintBottom_toTopOf="@id/tvUserNameResponse"/>
+            <TextView
+                android:id="@+id/tvUserNameResponse"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_user_name"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                app:layout_constraintEnd_toStartOf="@id/tvPhoneResponse"
+                app:layout_constraintBottom_toTopOf="@id/tvWebsite"/>
+
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_email"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toEndOf="@id/tvName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvEmailResponse"/>
+
+            <TextView
+                android:id="@+id/tvEmailResponse"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_email"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toEndOf="@id/tvNameResponse"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvPhone"/>
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_phone"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toEndOf="@id/tvUserName"
+                app:layout_constraintTop_toBottomOf="@id/tvEmailResponse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvPhoneResponse"/>
+
+            <TextView
+                android:id="@+id/tvPhoneResponse"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_phone"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toEndOf="@id/tvUserNameResponse"
+                app:layout_constraintTop_toBottomOf="@id/tvPhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvwebsiteResponse"/>
+
+            <TextView
+                android:id="@+id/tvWebsite"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_website"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserNameResponse"
+                app:layout_constraintEnd_toStartOf="@id/tvwebsiteResponse"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvwebsiteResponse"
+                android:layout_width="@dimen/size_tv"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_website"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_margin="@dimen/pading_min_tv"
+                app:layout_constraintStart_toEndOf="@id/tvWebsite"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneResponse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

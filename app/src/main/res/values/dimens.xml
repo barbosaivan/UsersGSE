@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pading_min">8dp</dimen>
+    <dimen name="margin_min_card">4dp</dimen>
+    <dimen name="card_heigth">200dp</dimen>
+    <dimen name="image_size">40dp</dimen>
+    <dimen name="pading_default">16sp</dimen>
+    <dimen name="pading_min_tv">4dp</dimen>
+    <dimen name="size_tv">156dp</dimen>
+</resources>
