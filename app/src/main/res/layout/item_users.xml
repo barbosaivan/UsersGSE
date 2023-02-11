@@ -126,7 +126,7 @@
 
             <TextView
                 android:id="@+id/tvWebsite"
-                android:layout_width="@dimen/size_tv"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="@string/text_website"
                 android:textAppearance="?attr/textAppearanceSubtitle2"
