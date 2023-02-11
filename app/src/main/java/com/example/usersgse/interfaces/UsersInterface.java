@@ -5,7 +5,6 @@ package com.example.usersgse.interfaces;/*
  * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
  */
 
-import com.example.usersgse.models.ResUsers;
 import com.example.usersgse.models.Users;
 
 import java.util.ArrayList;

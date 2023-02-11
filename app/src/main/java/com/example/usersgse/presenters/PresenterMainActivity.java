@@ -23,7 +23,7 @@ public class PresenterMainActivity implements  InterfaceMainActivity.PresenterAc
 
     @Override
     public void sendRetrofitResUsers(ArrayList<Users> list) {
-
+        viewActivity.valorList(list);
     }
 
     @Override

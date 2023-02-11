@@ -7,12 +7,15 @@ package com.example.usersgse.models;/*
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.usersgse.interfaces.InterfaceMainActivity;
 import com.example.usersgse.interfaces.UsersInterface;
 import com.example.usersgse.utils.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,16 +37,16 @@ public class ModelMainActivity implements InterfaceMainActivity.ModelActivity{
 
         resUsersCall.enqueue(new Callback<ArrayList<Users>>() {
             @Override
-            public void onResponse(Call<ArrayList<Users>> call, Response<ArrayList<Users>> response) {
+            public void onResponse(@NonNull Call<ArrayList<Users>> call, @NonNull Response<ArrayList<Users>> response) {
                 if (response.code() == 200) {
                     Log.i("Name",response.toString());
-                    ArrayList<Users> users = new ArrayList<>(response.body());
-                    for (Users users1: users) {
-                        Log.i("Name",users1.getName());
+                    if(response.body() != null){
+                        ArrayList<Users> users = new ArrayList<>(response.body());
+                        presenterActivity.sendRetrofitResUsers(users);
                     }
                 } else {
                     try {
-                        Log.v("Tag", "Error" + response.errorBody().string());
+                            Log.v("Tag", "Error" + Objects.requireNonNull(response.errorBody()).string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -51,7 +54,7 @@ public class ModelMainActivity implements InterfaceMainActivity.ModelActivity{
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Users>> call, Throwable t) {
+            public void onFailure(@NonNull Call<ArrayList<Users>> call, @NonNull Throwable t) {
                 t.printStackTrace();
             }
         });

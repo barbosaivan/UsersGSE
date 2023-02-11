@@ -12,18 +12,18 @@ import java.util.ArrayList;
 public interface InterfaceMainActivity {
 
     interface ViewActivity {
-
+        void valorList(ArrayList<Users> users);
     }
 
     interface PresenterActivity {
-        public void bringRetrofitResUsers();
+        void bringRetrofitResUsers();
 
-        public void sendRetrofitResUsers(ArrayList<Users> list);
+        void sendRetrofitResUsers(ArrayList<Users> list);
 
 
     }
 
     interface ModelActivity {
-        public void RetrofitResUsers();
+        void RetrofitResUsers();
     }
 }

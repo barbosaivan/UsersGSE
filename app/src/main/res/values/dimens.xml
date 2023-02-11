@@ -7,4 +7,7 @@
     <dimen name="pading_default">16sp</dimen>
     <dimen name="pading_min_tv">4dp</dimen>
     <dimen name="size_tv">156dp</dimen>
+    <dimen name="size_tv_email">210dp</dimen>
+    <dimen name="size_tv_id">45dp</dimen>
+    <dimen name="text">15sp</dimen>
 </resources>
