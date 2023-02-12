@@ -18,13 +18,16 @@ import com.example.usersgse.models.Users;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private final ArrayList<Users> listUsers;
+    private  ArrayList<Users> arraylist;
 
     public UserAdapter() {
         listUsers = new ArrayList<>();
+        arraylist = new ArrayList<>();
     }
 
     @NonNull
@@ -37,7 +40,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Users user = listUsers.get(position);
-        holder.text_id.setText(String.valueOf(user.getId()));
+        holder.textId.setText(String.valueOf(user.getId()));
         holder.textName.setText(user.getName());
         holder.textUser.setText(user.getEmail());
         holder.textEmail.setText(user.getEmail());
@@ -53,15 +56,37 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @SuppressLint("NotifyDataSetChanged")
     public void addUsers(List<Users> users){
         listUsers.addAll(users);
+        arraylist.addAll(users);
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        listUsers.clear();
+        if (charText.length() == 0) {
+            listUsers.addAll(arraylist);
+        } else {
+            for (Users u: arraylist) {
+                if (u.getName().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    listUsers.add(u);
+                }
+            }
+        }
         notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView text_id, textName, textUser,  textEmail,  textPhone, textWebsite;
+        private TextView textId;
+        private TextView textName;
+        private TextView textUser;
+        private TextView textEmail;
+        private TextView textPhone;
+        private TextView textWebsite;
         public ViewHolder(@NonNull android.view.View itemView) {
             super(itemView);
 
-            text_id = itemView.findViewById(R.id.tv_id);
+            textId = itemView.findViewById(R.id.tv_id);
             textName = itemView.findViewById(R.id.tvNameResponse);
             textUser = itemView.findViewById(R.id.tvUserNameResponse);
             textEmail = itemView.findViewById(R.id.tvEmailResponse);
