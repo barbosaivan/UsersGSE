@@ -1,7 +1,8 @@
-package com.example.usersgse.utils;/*
+package com.example.usersgse.utils;
+/**
  * Project: UsersGSE
  * From: com.example.usersgse.utils
- * Create by Ivan Barbosa on 11/02/2023 at 11:10 a. m.
+ * @author Ivan Barbosa on 11/02/2023 at 11:10 a. m.
  * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
  */
 

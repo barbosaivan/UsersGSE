@@ -1,4 +1,5 @@
-package com.example.usersgse.adapters;/*
+package com.example.usersgse.adapters;
+/*
  * Project: UsersGSE
  * From: com.example.usersgse.adapters
  * Create by Ivan Barbosa on 11/02/2023 at 2:59 p. m.
@@ -23,8 +24,11 @@ import java.util.Locale;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private final ArrayList<Users> listUsers;
-    private  ArrayList<Users> arraylist;
+    private ArrayList<Users> arraylist;
 
+    /**
+     * Constructor que inicializa las listas de usuarios usadas en esta clase
+     */
     public UserAdapter() {
         listUsers = new ArrayList<>();
         arraylist = new ArrayList<>();
@@ -33,7 +37,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       android.view.View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_users, parent, false);
+        android.view.View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_users, parent, false);
         return new ViewHolder(view);
     }
 
@@ -53,13 +57,23 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         return listUsers.size();
     }
 
+    /**
+     * Metodo que recibe un objeto de tipo usuario, lo agrega a una lista y notifica para actualizar el recyclerView
+     *
+     * @param users objeto de tipo usuario
+     */
     @SuppressLint("NotifyDataSetChanged")
-    public void addUsers(List<Users> users){
+    public void addUsers(List<Users> users) {
         listUsers.addAll(users);
         arraylist.addAll(users);
         notifyDataSetChanged();
     }
 
+    /**
+     * Metodo que recibe una cadena de caracteres y realiza la busque en la lista de usuarios por "name"
+     * La lista de usuarios mostrada en el recycler sera actualizada con los usuarios que coincidan
+     *
+     */
     @SuppressLint("NotifyDataSetChanged")
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
@@ -67,7 +81,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         if (charText.length() == 0) {
             listUsers.addAll(arraylist);
         } else {
-            for (Users u: arraylist) {
+            for (Users u : arraylist) {
                 if (u.getName().toLowerCase(Locale.getDefault()).contains(charText)) {
                     listUsers.add(u);
                 }
@@ -83,6 +97,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         private TextView textEmail;
         private TextView textPhone;
         private TextView textWebsite;
+
         public ViewHolder(@NonNull android.view.View itemView) {
             super(itemView);
 

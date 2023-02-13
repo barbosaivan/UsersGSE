@@ -1,4 +1,5 @@
-package com.example.usersgse.interfaces;/*
+package com.example.usersgse.interfaces;
+/*
  * Project: UsersGSE
  * From: com.example.usersgse.interfaces
  * Create by Ivan Barbosa on 11/02/2023 at 11:26 a. m.

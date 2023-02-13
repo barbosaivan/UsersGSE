@@ -1,9 +1,4 @@
-package com.example.usersgse.models;/*
- * Project: UsersGSE
- * From: com.example.usersgse.models
- * Create by Ivan Barbosa on 11/02/2023 at 11:16 a. m.
- * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
- */
+package com.example.usersgse.models;
 
 import android.util.Log;
 
@@ -21,16 +16,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ModelMainActivity implements InterfaceMainActivity.ModelActivity{
+public class ModelMainActivity implements InterfaceMainActivity.ModelActivity {
 
     InterfaceMainActivity.PresenterActivity presenterActivity;
 
-    public ModelMainActivity(InterfaceMainActivity.PresenterActivity presenterActivity){
+    public ModelMainActivity(InterfaceMainActivity.PresenterActivity presenterActivity) {
         this.presenterActivity = presenterActivity;
     }
 
+    /**
+     * Metodo que realiza la consulta aun servicio, carga la informacion en una lista de objetos de tipo "users" y la envia a la vista.
+     */
     @Override
-    public void RetrofitResUsers() {
+    public void retrofitResUsers() {
 
         UsersInterface usersInterface = Service.getUsers();
         Call<ArrayList<Users>> resUsersCall = usersInterface.getUsers();
@@ -39,14 +37,14 @@ public class ModelMainActivity implements InterfaceMainActivity.ModelActivity{
             @Override
             public void onResponse(@NonNull Call<ArrayList<Users>> call, @NonNull Response<ArrayList<Users>> response) {
                 if (response.code() == 200) {
-                    Log.i("Name",response.toString());
-                    if(response.body() != null){
+                    Log.i("Name", response.toString());
+                    if (response.body() != null) {
                         ArrayList<Users> users = new ArrayList<>(response.body());
                         presenterActivity.sendRetrofitResUsers(users);
                     }
                 } else {
                     try {
-                            Log.v("Tag", "Error" + Objects.requireNonNull(response.errorBody()).string());
+                        Log.v("Tag", "Error" + Objects.requireNonNull(response.errorBody()).string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

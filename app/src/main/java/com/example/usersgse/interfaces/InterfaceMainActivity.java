@@ -1,7 +1,8 @@
-package com.example.usersgse.interfaces;/*
+package com.example.usersgse.interfaces;
+/*
  * Project: UsersGSE
  * From: com.example.usersgse.interfaces
- * Create by Ivan Barbosa on 11/02/2023 at 11:16 a. m.
+ * @author Ivan Barbosa on 11/02/2023 at 11:16 a. m.
  * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
  */
 
@@ -24,6 +25,6 @@ public interface InterfaceMainActivity {
     }
 
     interface ModelActivity {
-        void RetrofitResUsers();
+        void retrofitResUsers();
     }
 }

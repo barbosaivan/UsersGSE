@@ -1,4 +1,5 @@
-package com.example.usersgse.presenters;/*
+package com.example.usersgse.presenters;
+/*
  * Project: UsersGSE
  * From: com.example.usersgse.presenters
  * Create by Ivan Barbosa on 11/02/2023 at 11:15 a. m.
@@ -28,7 +29,7 @@ public class PresenterMainActivity implements  InterfaceMainActivity.PresenterAc
 
     @Override
     public void bringRetrofitResUsers() {
-        modelActivity.RetrofitResUsers();
+        modelActivity.retrofitResUsers();
     }
 
 }

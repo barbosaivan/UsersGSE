@@ -1,4 +1,11 @@
 package com.example.usersgse.views;
+/**
+ * Project: UsersGSE
+ * From: com.example.usersgse.views
+ * Create by Ivan Barbosa on 11/02/2023 at 11:05 a. m.
+ * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
+ * Esta clase define objetos de tipo Users
+ */
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,10 +26,10 @@ import com.example.usersgse.presenters.PresenterMainActivity;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ViewMainActivity extends AppCompatActivity implements InterfaceMainActivity.ViewActivity{
+public class ViewMainActivity extends AppCompatActivity implements InterfaceMainActivity.ViewActivity {
     private UserAdapter userAdapter;
 
-    private   Toolbar toolbar;
+    private Toolbar toolbar;
 
     InterfaceMainActivity.PresenterActivity presenterActivity;
 
@@ -36,7 +43,10 @@ public class ViewMainActivity extends AppCompatActivity implements InterfaceMain
         presenterActivity.bringRetrofitResUsers();
     }
 
-    public void init(){
+    /**
+     *Metodo que inicializa los objetos y elementos a utilizar
+     */
+    public void init() {
         presenterActivity = new PresenterMainActivity(this);
         userAdapter = new UserAdapter();
         setSupportActionBar(toolbar);
@@ -49,11 +59,20 @@ public class ViewMainActivity extends AppCompatActivity implements InterfaceMain
         recyclerView.setLayoutManager(layoutManager);
     }
 
+    /**
+     * Metodo que recibe una lista de usuarios y la pasa al adaptador
+     * @param users
+     */
     @Override
     public void valorList(ArrayList<Users> users) {
         userAdapter.addUsers(users);
     }
 
+    /**
+     * Metodo implementado que eschucha los caracteres escritos en el searchView y los envia al adptador
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

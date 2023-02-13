@@ -1,8 +1,10 @@
-package com.example.usersgse.models;/*
+package com.example.usersgse.models;
+/**
  * Project: UsersGSE
  * From: com.example.usersgse.views
- * Create by Ivan Barbosa on 11/02/2023 at 11:05 a. m.
+ * @author Ivan Barbosa on 11/02/2023 at 11:05 a. m.
  * Linkedin: https://www.linkedin.com/in/ivanbarbosaortega/
+ * Esta clase define objetos de tipo Users
  */
 
 public class Users {
@@ -13,6 +15,16 @@ public class Users {
     private String phone;
     private String website;
 
+    /**
+     * Constructor para crear un usuario
+     *
+     * @param id       identificador del usuario
+     * @param name     Nombre del usuario, usado para filtrar la lista de usuarios
+     * @param username
+     * @param email
+     * @param phone
+     * @param website
+     */
     public Users(int id, String name, String username, String email, String phone, String website) {
         this.id = id;
         this.name = name;
@@ -20,7 +32,8 @@ public class Users {
         this.email = email;
         this.phone = phone;
         this.website = website;
-    }
+    }// Cierre del contructor
+
 
     public int getId() {
         return id;
